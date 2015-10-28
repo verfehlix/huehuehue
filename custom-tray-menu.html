@@ -3,8 +3,9 @@
         var gui = require('nw.gui');
         var win = gui.Window.get();
     </script>
-    <script src="node_modules/nw-dev/lib/dev.js"></script>
+    <!--<script src="node_modules/nw-dev/lib/dev.js"></script>-->
     <link rel="stylesheet" href="onoffswitch.css">
+    <link rel="stylesheet" href="buttongroup.css">
     <style>
         body, html {
             margin: 0;
@@ -53,16 +54,19 @@
             font-size: 12px;
             border-bottom: 1px solid #333;
         }
-        .lightswitch {
-            margin-top: 20px;
-            position: relative;
+        .switchtext {
+            float:left; 
+            padding-right:5px;
+            padding-bottom: 5px;
+            color: #EEEEEE;
         }
     </style>
     <body>
         <section>
             <h4>huehuehue</h4>
-            <div class="lightswitch">
-                <div style="float:left; padding-right:5px;">Turn on Light 1</div>
+            
+            <div>
+                <div class="switchtext">Turn on Light 1</div>
                 <div style="float:left;">
                     <div class="onoffswitch">
                         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="lightswitch1" checked>
@@ -70,8 +74,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lightswitch">
-                <div style="float:left; padding-right:5px;">Turn on Light 2</div>
+            <div>
+                <div class="switchtext">Turn on Light 2</div>
                 <div style="float:left;">
                     <div class="onoffswitch">
                         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="lightswitch2" checked>
@@ -79,8 +83,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lightswitch">
-                <div style="float:left; padding-right:5px;">Turn on Light 3</div>
+            <div>
+                <div class="switchtext">Turn on Light 3</div>
                 <div style="float:left;">
                     <div class="onoffswitch">
                         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="lightswitch3" checked>
@@ -88,7 +92,17 @@
                     </div>
                 </div>
             </div>
-            <p><button onclick="gui.App.closeAllWindows();">Quit</button></p>
+
+            <div style="clear: left; margin-left: -40px;">
+                <p></p>
+                <ul class=" stack button-group round">
+                    <li><a href="#" class="button secondary small">Warm</a></li>
+                    <li><a href="#" class="button secondary small">Red</a></li>
+                    <li><a href="#" class="button secondary small">Blue</a></li>
+                </ul>
+            </div>
+
+            <a style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
         </section>
     </body>
 </html>

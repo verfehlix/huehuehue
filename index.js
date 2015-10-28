@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   $('#add-tray').addEventListener('click', function () {
     if (!customTray) {
       customTray = new CustomTrayMenu('custom-tray-menu.html', 'tray.png', {
-        width: 185,
-        height: 143
+        width: 200,
+        height: 1000
       });
     }
   });
