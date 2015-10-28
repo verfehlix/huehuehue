@@ -1,7 +1,7 @@
 "use strict";
 
 var gui = require('nw.gui');
-var CustomTrayMenu = require('./js/custom_tray_menu');
+var CustomTrayMenu = require('./custom_tray_menu');
 
 var $ = function (selector) {
   return document.querySelector(selector);

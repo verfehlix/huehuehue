@@ -8,7 +8,7 @@ class CustomTrayMenu {
         this.shown = false;
         this.iconWidth = 20;
 
-        this.trayIcon = trayIcon || 'tray.png';
+        this.trayIcon = trayIcon || 'tray2.png';
         this.menuWindowPath = windowPath || 'custom-tray-menu.html';
         this.menuWndowOptions = windowOptions || {
             width: 185,
