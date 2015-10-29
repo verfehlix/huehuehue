@@ -47,6 +47,7 @@ class CustomTrayMenu {
             resizable: false,
             toolbar: false,
             show: false,
+            show_in_taskbar: false
         }, this.menuWndowOptions);
 
         this.trayMenu = gui.Window.open(this.menuWindowPath, windowOptions);

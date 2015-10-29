@@ -2,7 +2,8 @@
   "name": "nw-custom-tray-window",
   "main": "index.html",
   "window": {
-    "show": true,
+    "show": false,
+    "show_in_taskbar" : false,
     "frame": true,
     "toolbar": true,
     "icon": "app.icns",
