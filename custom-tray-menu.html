@@ -3,64 +3,11 @@
         var gui = require('nw.gui');
         var win = gui.Window.get();
     </script>
-    <!--<script src="node_modules/nw-dev/lib/dev.js"></script>-->
+    <script src="js/huehuehue.js"></script>
+    <script src="js/tray.js"></script>
     <link rel="stylesheet" href="css/onoffswitch.css">
     <link rel="stylesheet" href="css/buttongroup.css">
-    <style>
-        body, html {
-            margin: 0;
-            font-size: 12px;
-            font-family: Helvetica Neue, Lucida Grande, Segoe UI, Tahoma, sans;
-            overflow: hidden !important;
-            color: #333;
-        }
-        section {
-            background: #555;
-            margin: 9px 13px 13px 13px;
-            padding: 9px;
-            border-radius: 7px;
-            border: 1px solid #333;
-            position: relative;
-        }
-        section::after, section::before {
-            position: absolute;
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-        }
-        section::before {
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid #A9A9A9;
-            top: -10px;
-            left: calc(50% - 11px);
-        }
-        section::after {
-            border-left: 9px solid transparent;
-            border-right: 9px solid transparent;
-            border-bottom: 9px solid #333;
-            top: -9px;
-            left: calc(50% - 10px);
-        }
-        h4 {
-            color: #EEEEEE;
-            background: #333;
-            line-height: 20px;
-            margin: -9px -9px 10px -9px;
-            border-top-left-radius: 7px;
-            border-top-right-radius: 7px;
-            text-align: center;
-            font-size: 12px;
-            border-bottom: 1px solid #333;
-        }
-        .switchtext {
-            float:left; 
-            padding-right:5px;
-            padding-bottom: 5px;
-            color: #EEEEEE;
-        }
-    </style>
+    <link rel="stylesheet" href="css/custom-tray-menu.css">
     <body>
         <section>
             <h4>huehuehue</h4>
@@ -69,7 +16,7 @@
                 <div class="switchtext">Turn on Light 1</div>
                 <div style="float:left;">
                     <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="lightswitch1" checked>
+                        <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox" id="lightswitch1" checked>
                         <label class="onoffswitch-label" for="lightswitch1"></label>
                     </div>
                 </div>
@@ -78,7 +25,7 @@
                 <div class="switchtext">Turn on Light 2</div>
                 <div style="float:left;">
                     <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="lightswitch2" checked>
+                        <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="lightswitch2" checked>
                         <label class="onoffswitch-label" for="lightswitch2"></label>
                     </div>
                 </div>
@@ -87,7 +34,7 @@
                 <div class="switchtext">Turn on Light 3</div>
                 <div style="float:left;">
                     <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="lightswitch3" checked>
+                        <input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox" id="lightswitch3" checked>
                         <label class="onoffswitch-label" for="lightswitch3"></label>
                     </div>
                 </div>
