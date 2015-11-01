@@ -1,5 +1,10 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
+var huecontrol = require("./js/huecontrol");
+
+var checkbox1 = document.getElementById("lightswitch1");
+var checkbox2 = document.getElementById("lightswitch2");
+var checkbox3 = document.getElementById("lightswitch3");
 
 var tray = new gui.Tray({
 	title: 'huehuehue',
@@ -35,9 +40,20 @@ function translate(pos) {
 	pos.y -= 0;
 }
 
-var huecontrol = require("./js/huecontrol");
+function updateSwitches() {
+	huecontrol.getLightStatus(1, function(data){
+		checkbox1.checked = data.state.on;
+	});
 
-var checkbox1 = document.getElementById("lightswitch1");
+	huecontrol.getLightStatus(2, function(data){
+		checkbox2.checked = data.state.on;
+	});
+
+	huecontrol.getLightStatus(3, function(data){
+		checkbox3.checked = data.state.on;
+	});
+}
+
 checkbox1.addEventListener("change", function(){
     if (checkbox1.checked) {
         huecontrol.turnOnLight(1);
@@ -46,7 +62,6 @@ checkbox1.addEventListener("change", function(){
     }
 });
 
-var checkbox2 = document.getElementById("lightswitch2");
 checkbox2.addEventListener("change", function(){
     if (checkbox2.checked) {
         huecontrol.turnOnLight(2);
@@ -56,7 +71,6 @@ checkbox2.addEventListener("change", function(){
 });
 
 
-var checkbox3 = document.getElementById("lightswitch3");
 checkbox3.addEventListener("change", function(){
     if (checkbox3.checked) {
         huecontrol.turnOnLight(3);
@@ -65,4 +79,4 @@ checkbox3.addEventListener("change", function(){
     }
 });
 
-
+updateSwitches();
