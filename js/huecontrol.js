@@ -4,7 +4,7 @@ var hue = require("node-hue-api");
 var HueApi = hue.HueApi;
 var lightState = hue.lightState;
 
-var bridgeconfig = JSON.parse(fs.readFileSync('../bridgeconfig.json', 'utf8'));
+var bridgeconfig = JSON.parse(fs.readFileSync('bridgeconfig.json', 'utf8'));
 var hostname = bridgeconfig.ip;
 var username = bridgeconfig.username;
 var api = new HueApi(hostname, username);

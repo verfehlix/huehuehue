@@ -34,3 +34,35 @@ function translate(pos) {
 	pos.x -= Math.floor(win.width / 2);
 	pos.y -= 0;
 }
+
+var huecontrol = require("./js/huecontrol");
+
+var checkbox1 = document.getElementById("lightswitch1");
+checkbox1.addEventListener("change", function(){
+    if (checkbox1.checked) {
+        huecontrol.turnOnLight(1);
+    } else {
+        huecontrol.turnOffLight(1);
+    }
+});
+
+var checkbox2 = document.getElementById("lightswitch2");
+checkbox2.addEventListener("change", function(){
+    if (checkbox2.checked) {
+        huecontrol.turnOnLight(2);
+    } else {
+        huecontrol.turnOffLight(2);
+    }
+});
+
+
+var checkbox3 = document.getElementById("lightswitch3");
+checkbox3.addEventListener("change", function(){
+    if (checkbox3.checked) {
+        huecontrol.turnOnLight(3);
+    } else {
+        huecontrol.turnOffLight(3);
+    }
+});
+
+
