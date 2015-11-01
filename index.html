@@ -5,7 +5,8 @@
         
         <link rel="stylesheet" href="css/onoffswitch.css">
         <link rel="stylesheet" href="css/buttongroup.css">
-        <link rel="stylesheet" href="css/custom-tray-menu.css">
+        <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/huehuehue.css">
         
         <script src="node_modules/nw-dev/lib/dev.js"></script>
     </head>
@@ -42,7 +43,12 @@
                 </div>
             </div>
 
-            <div style="clear: left; margin-left: -40px;">
+            <div style="clear: left;">
+                <p style="margin-bottom: 0px;">Brightness:</p>
+                <input type="range" name="brightness" min="0" max="100">
+            </div>
+
+            <div style="clear: left; margin-top: -5px; margin-left: -40px;">
                 <p></p>
                 <ul class=" stack button-group round">
                     <li><a href="#" class="button secondary small">Warm</a></li>
@@ -50,7 +56,6 @@
                     <li><a href="#" class="button secondary small">Blue</a></li>
                 </ul>
             </div>
-
             <a style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
         </section>
     </body>

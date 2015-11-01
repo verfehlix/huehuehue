@@ -2,10 +2,12 @@ var gui = require('nw.gui');
 var win = gui.Window.get();
 var huecontrol = require("./js/huecontrol");
 
+//get checkboxes
 var checkbox1 = document.getElementById("lightswitch1");
 var checkbox2 = document.getElementById("lightswitch2");
 var checkbox3 = document.getElementById("lightswitch3");
 
+//create tray icon
 var tray = new gui.Tray({
 	title: 'huehuehue',
 	icon: "/img/tray.png",
@@ -14,6 +16,7 @@ var tray = new gui.Tray({
 	iconsAreTemplates: false
 });
 
+//add event listeners
 tray.on('click', toggleTrayMenuAt.bind(this));
 
 win.on('blur', function() {
@@ -21,12 +24,37 @@ win.on('blur', function() {
 	win.shown = false;
 }.bind(this));
 
+checkbox1.addEventListener("change", function(){
+    if (checkbox1.checked) {
+        huecontrol.turnOnLight(1);
+    } else {
+        huecontrol.turnOffLight(1);
+    }
+});
+
+checkbox2.addEventListener("change", function(){
+    if (checkbox2.checked) {
+        huecontrol.turnOnLight(2);
+    } else {
+        huecontrol.turnOffLight(2);
+    }
+});
+
+checkbox3.addEventListener("change", function(){
+    if (checkbox3.checked) {
+        huecontrol.turnOnLight(3);
+    } else {
+        huecontrol.turnOffLight(3);
+    }
+});
+
 // called when user click on tray icon
 function toggleTrayMenuAt(position) {
 	if (win.shown) {
 		win.hide();
 		win.shown = false;
 	} else {
+		updateSwitches();
 		translate(position);
 		win.moveTo(position.x, 30);
 		win.show();
@@ -54,29 +82,5 @@ function updateSwitches() {
 	});
 }
 
-checkbox1.addEventListener("change", function(){
-    if (checkbox1.checked) {
-        huecontrol.turnOnLight(1);
-    } else {
-        huecontrol.turnOffLight(1);
-    }
-});
-
-checkbox2.addEventListener("change", function(){
-    if (checkbox2.checked) {
-        huecontrol.turnOnLight(2);
-    } else {
-        huecontrol.turnOffLight(2);
-    }
-});
-
-
-checkbox3.addEventListener("change", function(){
-    if (checkbox3.checked) {
-        huecontrol.turnOnLight(3);
-    } else {
-        huecontrol.turnOffLight(3);
-    }
-});
-
+//initally update the switches
 updateSwitches();

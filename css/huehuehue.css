@@ -5,6 +5,9 @@ body, html {
     overflow: hidden !important;
     color: #333;
 }
+p {
+    color: #EEEEEE
+}
 section {
     background: #555;
     margin: 9px 13px 13px 13px;
