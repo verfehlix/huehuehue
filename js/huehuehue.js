@@ -2,7 +2,7 @@ var gui = require('nw.gui');
 var win = gui.Window.get();
 
 var tray = new gui.Tray({
-	title: '',
+	title: 'huehuehue',
 	icon: "/img/tray.png",
 	alticon: '',
 	tooltip: window.document.title,
@@ -10,6 +10,11 @@ var tray = new gui.Tray({
 });
 
 tray.on('click', toggleTrayMenuAt.bind(this));
+
+win.on('blur', function() {
+	win.hide();
+	win.shown = false;
+}.bind(this));
 
 // called when user click on tray icon
 function toggleTrayMenuAt(position) {
