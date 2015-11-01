@@ -1,14 +1,19 @@
 {
-  "name": "nw-custom-tray-window",
+  "name": "huehuehue",
   "main": "index.html",
   "window": {
     "show": false,
-    "show_in_taskbar" : false,
-    "frame": true,
-    "toolbar": true,
+    "show_in_taskbar": false,
+    "icon_width": 20,
     "icon": "app.icns",
-    "width": 550,
-    "height": 348
+    "tray_icon": "/img/tray.png",
+    "transparent": true,
+    "show_in_taskbar" : false,
+    "frame": false,
+    "resizable": false,
+    "toolbar": false,
+    "width": 200,
+    "height": 400
   },
   "scripts": {
     "start": "nw ."

@@ -2,18 +2,57 @@
 <html>
     <head>
         <title>huehuehue</title>
+        
+        <link rel="stylesheet" href="css/onoffswitch.css">
+        <link rel="stylesheet" href="css/buttongroup.css">
+        <link rel="stylesheet" href="css/custom-tray-menu.css">
+        
         <script src="node_modules/nw-dev/lib/dev.js"></script>
-        <script src="js/index.js"></script>
+        <script src="js/huehuehue.js"></script>
     </head>
-
+    
     <body>
         <section>
-            <div class="buttons-group">
-                <h5>Custom Tray Menu Example</h5>
-                <button id="add-tray">Add Tray Icon</button>
-                <button id="remove-tray">Remove Tray Icon</button>
-            </div>        
+            <h4>huehuehue</h4>
+            
+            <div>
+                <div class="switchtext">Turn on Light 1</div>
+                <div style="float:left;">
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox" id="lightswitch1" checked>
+                        <label class="onoffswitch-label" for="lightswitch1"></label>
+                    </div>
+                </div>
             </div>
+            <div>
+                <div class="switchtext">Turn on Light 2</div>
+                <div style="float:left;">
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="lightswitch2" checked>
+                        <label class="onoffswitch-label" for="lightswitch2"></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="switchtext">Turn on Light 3</div>
+                <div style="float:left;">
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox" id="lightswitch3" checked>
+                        <label class="onoffswitch-label" for="lightswitch3"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div style="clear: left; margin-left: -40px;">
+                <p></p>
+                <ul class=" stack button-group round">
+                    <li><a href="#" class="button secondary small">Warm</a></li>
+                    <li><a href="#" class="button secondary small">Red</a></li>
+                    <li><a href="#" class="button secondary small">Blue</a></li>
+                </ul>
+            </div>
+
+            <a style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
         </section>
     </body>
 </html>
