@@ -6,6 +6,7 @@ var huecontrol = require("./js/huecontrol");
 var checkbox1 = document.getElementById("lightswitch1");
 var checkbox2 = document.getElementById("lightswitch2");
 var checkbox3 = document.getElementById("lightswitch3");
+var brightnessSlider = document.getElementById("brightnessSlider");
 
 //create tray icon
 var tray = new gui.Tray({
@@ -48,13 +49,19 @@ checkbox3.addEventListener("change", function(){
     }
 });
 
+brightnessSlider.addEventListener("input", function(){
+	huecontrol.setBrightness(brightnessSlider.value);
+});
+
+
+
 // called when user click on tray icon
 function toggleTrayMenuAt(position) {
 	if (win.shown) {
 		win.hide();
 		win.shown = false;
 	} else {
-		updateSwitches();
+		updateInterface();
 		translate(position);
 		win.moveTo(position.x, 30);
 		win.show();
@@ -68,9 +75,11 @@ function translate(pos) {
 	pos.y -= 0;
 }
 
-function updateSwitches() {
+function updateInterface() {
 	huecontrol.getLightStatus(1, function(data){
 		checkbox1.checked = data.state.on;
+		var brightnessPercent = (data.state.bri / 255) * 100;
+		brightnessSlider.value = brightnessPercent;
 	});
 
 	huecontrol.getLightStatus(2, function(data){
@@ -82,5 +91,6 @@ function updateSwitches() {
 	});
 }
 
-//initally update the switches
-updateSwitches();
+//initally update the interface (switches/slider/buttons)
+updateInterface();
+

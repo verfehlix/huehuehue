@@ -16,24 +16,40 @@ module.exports = {
 		console.log(JSON.stringify(result, null, 4));
 	},
 
-	getLightStatus: function(number, callback) {
-		api.lightStatus(number, function(err, result) {
+	getLightStatus: function(lightNumber, callback) {
+		api.lightStatus(lightNumber, function(err, result) {
 			if (err) throw err;
 			callback(result);
 		});
 	},
 
-	turnOnLight: function(number) {
+	turnOnLight: function(lightNumber) {
 		var huecontrol = this;
-		api.setLightState(number, state.on())
+		api.setLightState(lightNumber, state.on())
 			.then(huecontrol.display)
 			.fail(huecontrol.display)
 			.done();
 	},
 
-	turnOffLight: function(number) {
+	turnOffLight: function(lightNumber) {
 		var huecontrol = this;
-		api.setLightState(number, state.off())
+		api.setLightState(lightNumber, state.off())
+			.then(huecontrol.display)
+			.fail(huecontrol.display)
+			.done();
+	},
+
+	setBrightness: function(brightness) {
+		var huecontrol = this;
+		api.setLightState(1, state.brightness(brightness))
+			.then(huecontrol.display)
+			.fail(huecontrol.display)
+			.done();
+		api.setLightState(2, state.brightness(brightness))
+			.then(huecontrol.display)
+			.fail(huecontrol.display)
+			.done();
+		api.setLightState(3, state.brightness(brightness))
 			.then(huecontrol.display)
 			.fail(huecontrol.display)
 			.done();
