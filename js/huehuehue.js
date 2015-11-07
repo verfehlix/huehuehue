@@ -2,11 +2,14 @@ var gui = require('nw.gui');
 var win = gui.Window.get();
 var huecontrol = require("./js/huecontrol");
 
-//get checkboxes
+//get ui controls
 var checkbox1 = document.getElementById("lightswitch1");
 var checkbox2 = document.getElementById("lightswitch2");
 var checkbox3 = document.getElementById("lightswitch3");
 var brightnessSlider = document.getElementById("brightnessSlider");
+
+//empty list for scenes
+var scenes = [];
 
 //create tray icon
 var tray = new gui.Tray({
@@ -89,8 +92,11 @@ function updateInterface() {
 	huecontrol.getLightStatus(3, function(data){
 		checkbox3.checked = data.state.on;
 	});
+
+	huecontrol.getScenes(function(data){
+		scenes = data;
+	});
 }
 
 //initally update the interface (switches/slider/buttons)
 updateInterface();
-

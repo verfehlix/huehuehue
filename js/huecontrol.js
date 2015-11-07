@@ -16,6 +16,10 @@ module.exports = {
 		console.log(JSON.stringify(result, null, 4));
 	},
 
+	returnResult: function(result) {
+		return result;
+	},
+
 	getLightStatus: function(lightNumber, callback) {
 		api.lightStatus(lightNumber, function(err, result) {
 			if (err) throw err;
@@ -53,5 +57,13 @@ module.exports = {
 			.then(huecontrol.display)
 			.fail(huecontrol.display)
 			.done();
+	},
+
+	getScenes: function(callback) {
+		var huecontrol = this;
+		api.getScenes(function(err, result) {
+			if (err) throw err;
+			callback(result);
+		});
 	}
 }
