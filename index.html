@@ -3,17 +3,35 @@
     <head>
         <title>huehuehue</title>
         
-        <link rel="stylesheet" href="css/onoffswitch.css">
+        <!--<link rel="stylesheet" href="css/onoffswitch.css">
         <link rel="stylesheet" href="css/buttongroup.css">
-        <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/slider.css">-->
         <link rel="stylesheet" href="css/huehuehue.css">
+        <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
+        <script src="node_modules/material-design-lite/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         
         <script src="node_modules/nw-dev/lib/dev.js"></script>
     </head>
     
     <body>
         <section>
-            <h4>huehuehue</h4>
+            <div class="titlebar">
+                huehuehue
+            </div>
+
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+              <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+              <span class="mdl-switch__label"></span>
+            </label>
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+              <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
+              <span class="mdl-switch__label"></span>
+            </label>
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+              <input type="checkbox" id="switch-3" class="mdl-switch__input" checked>
+              <span class="mdl-switch__label"></span>
+            </label>
             
             <div>
                 <div class="switchtext">Turn on Light 1</div>
@@ -45,18 +63,10 @@
 
             <div style="clear: left;">
                 <p style="margin-bottom: 0px;">Brightness:</p>
-                <input id="brightnessSlider" type="range" name="brightness" min="0" max="100" step="10">
+                <input class="mdl-slider mdl-js-slider" id="brightnessSlider" type="range" name="brightness" min="0" max="100" step="10">
             </div>
 
-            <div style="clear: left; margin-top: -5px; margin-left: -40px;">
-                <p></p>
-                <ul class=" stack button-group round">
-                    <li><a href="#" class="button secondary small">Warm</a></li>
-                    <li><a href="#" class="button secondary small">Red</a></li>
-                    <li><a href="#" class="button secondary small">Blue</a></li>
-                </ul>
-            </div>
-            <a style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
         </section>
     </body>
 

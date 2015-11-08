@@ -8,7 +8,6 @@
     "icon": "app.icns",
     "tray_icon": "/img/tray.png",
     "transparent": true,
-    "show_in_taskbar" : false,
     "frame": false,
     "resizable": false,
     "toolbar": false,
@@ -19,5 +18,6 @@
     "start": "nw ."
   },
   "dependencies": {
+    "material-design-lite": "^1.0.6"
   }
 }
