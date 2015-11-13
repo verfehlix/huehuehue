@@ -3,9 +3,9 @@ var win = gui.Window.get();
 var huecontrol = require("./js/huecontrol");
 
 //get ui controls
-var checkbox1 = document.getElementById("lightswitch1");
-var checkbox2 = document.getElementById("lightswitch2");
-var checkbox3 = document.getElementById("lightswitch3");
+var checkbox1 = document.getElementById("switch-1");
+var checkbox2 = document.getElementById("switch-2");
+var checkbox3 = document.getElementById("switch-3");
 var brightnessSlider = document.getElementById("brightnessSlider");
 
 //empty list for scenes
@@ -52,7 +52,7 @@ checkbox3.addEventListener("change", function(){
     }
 });
 
-brightnessSlider.addEventListener("input", function(){
+brightnessSlider.addEventListener("change", function(){
 	huecontrol.setBrightness(brightnessSlider.value);
 });
 
@@ -82,7 +82,7 @@ function updateInterface() {
 	huecontrol.getLightStatus(1, function(data){
 		checkbox1.checked = data.state.on;
 		var brightnessPercent = (data.state.bri / 255) * 100;
-		brightnessSlider.value = brightnessPercent;
+		brightnessSlider.MaterialSlider.change(brightnessPercent)
 	});
 
 	huecontrol.getLightStatus(2, function(data){
@@ -98,5 +98,6 @@ function updateInterface() {
 	});
 }
 
-//initally update the interface (switches/slider/buttons)
-updateInterface();
+document.addEventListener('DOMContentLoaded', function() {
+    updateInterface();
+}, false);

@@ -26,6 +26,15 @@ section::after {
 }
 
 .titlebar {
-    margin-top: 0px !important;
+    width: calc(100%+9px);
+    border-radius: 2px 2px 0px 0px;
+    margin-top: -33px !important;
+    margin-left: -9px;
+    margin-right: -9px;
     background-color: #aeea00;
+    line-height: 30px;
+}
+
+.title {
+    margin-left: 9px;
 }

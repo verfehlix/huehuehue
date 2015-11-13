@@ -3,70 +3,50 @@
     <head>
         <title>huehuehue</title>
         
-        <!--<link rel="stylesheet" href="css/onoffswitch.css">
-        <link rel="stylesheet" href="css/buttongroup.css">
-        <link rel="stylesheet" href="css/slider.css">-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
         <link rel="stylesheet" href="css/huehuehue.css">
         <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
         <script src="node_modules/material-design-lite/material.min.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
         <script src="node_modules/nw-dev/lib/dev.js"></script>
     </head>
     
     <body>
         <section>
             <div class="titlebar">
-                huehuehue
+                <h6 class="title">huehuehue</h6>
             </div>
 
-            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-              <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
-              <span class="mdl-switch__label"></span>
-            </label>
-            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-              <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
-              <span class="mdl-switch__label"></span>
-            </label>
-            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
-              <input type="checkbox" id="switch-3" class="mdl-switch__input" checked>
-              <span class="mdl-switch__label"></span>
-            </label>
+            <p style="margin-bottom: 0px;">Lights:</p>
+
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col">
+                    Desk
+                    <label stlye="float: left;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                        <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col">
+                    Guitars
+                    <label stlye="float: left;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+                        <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
+                    </label>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col">
+                    TV
+                    <label stlye="float: left;" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+                        <input type="checkbox" id="switch-3" class="mdl-switch__input" checked>
+                    </label>
+                </div>
+            </div>
+
+            <p style="margin-bottom: 0px;">Brightness:</p>
+            <input class="mdl-slider mdl-js-slider" id="brightnessSlider" type="range" name="brightness" min="0" max="100" step="10">
             
-            <div>
-                <div class="switchtext">Turn on Light 1</div>
-                <div style="float:left;">
-                    <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox" id="lightswitch1" checked>
-                        <label class="onoffswitch-label" for="lightswitch1"></label>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="switchtext">Turn on Light 2</div>
-                <div style="float:left;">
-                    <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="lightswitch2" checked>
-                        <label class="onoffswitch-label" for="lightswitch2"></label>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="switchtext">Turn on Light 3</div>
-                <div style="float:left;">
-                    <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox" id="lightswitch3" checked>
-                        <label class="onoffswitch-label" for="lightswitch3"></label>
-                    </div>
-                </div>
-            </div>
-
-            <div style="clear: left;">
-                <p style="margin-bottom: 0px;">Brightness:</p>
-                <input class="mdl-slider mdl-js-slider" id="brightnessSlider" type="range" name="brightness" min="0" max="100" step="10">
-            </div>
-
             <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
+
         </section>
     </body>
 
