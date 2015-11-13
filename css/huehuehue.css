@@ -31,10 +31,17 @@ section::after {
     margin-top: -33px !important;
     margin-left: -9px;
     margin-right: -9px;
+    margin-right: -9px !important;
+    margin-bottom: -10px !important;
     background-color: #aeea00;
-    line-height: 30px;
 }
 
 .title {
     margin-left: 9px;
+    line-height: 40px;
+}
+
+.buttoncontainer {
+    margin-left: 9px;
+    padding: 5px;
 }

@@ -19,7 +19,7 @@
                 <h6 class="title">huehuehue</h6>
             </div>
 
-            <p style="margin-bottom: 0px;">Lights:</p>
+            <p style="margin-bottom: -10px;"><b>Lights:</b></p>
 
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--2-col">
@@ -42,9 +42,25 @@
                 </div>
             </div>
 
-            <p style="margin-bottom: 0px;">Brightness:</p>
+            <p style="margin-bottom: 0px;"><b>Brightness:</b></p>
             <input class="mdl-slider mdl-js-slider" id="brightnessSlider" type="range" name="brightness" min="0" max="100" step="10">
-            
+
+            <p style="margin-bottom: 0px;"><b>Scenes:</b></p>
+
+            <div class="buttoncontainer">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                    <i class="material-icons" style="color: #fb8c00;">wb_incandescent</i>
+                </button>
+
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                    <i class="material-icons" style="color: #e53935;">wb_incandescent</i>
+                </button>
+
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                    <i class="material-icons" style="color: #039be5;">wb_incandescent</i>
+                </button>
+            </div>
+
             <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
 
         </section>
