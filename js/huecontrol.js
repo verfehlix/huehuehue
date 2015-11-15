@@ -16,13 +16,19 @@ module.exports = {
 		console.log(JSON.stringify(result, null, 4));
 	},
 
+	displayError: function(error) {
+		console.log("ERROR!");
+		console.log(error);
+	},
+
 	returnResult: function(result) {
 		return result;
 	},
 
 	getLightStatus: function(lightNumber, callback) {
 		api.lightStatus(lightNumber, function(err, result) {
-			if (err) throw err;
+			if (err) huecontrol.displayError(err);
+			
 			callback(result);
 		});
 	},
@@ -62,8 +68,19 @@ module.exports = {
 	getScenes: function(callback) {
 		var huecontrol = this;
 		api.getScenes(function(err, result) {
-			if (err) throw err;
+			if (err) huecontrol.displayError(err);
+			
 			callback(result);
+		});
+	},
+
+	activateScene: function(sceneId, callback) {
+		var huecontrol = this;
+		api.activateScene(sceneId, function(err, result) {
+		if (err) huecontrol.displayError(err);
+		
+		huecontrol.display(result);
+		callback();
 		});
 	}
 }

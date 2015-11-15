@@ -2,15 +2,15 @@
 <html>
     <head>
         <title>huehuehue</title>
-        
+
+        <script src="node_modules/material-design-lite/material.min.js"></script>
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
         <link rel="stylesheet" href="css/huehuehue.css">
         <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
-        <script src="node_modules/material-design-lite/material.min.js"></script>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-
-        <script src="node_modules/nw-dev/lib/dev.js"></script>
+    <!--<script src="node_modules/nw-dev/lib/dev.js"></script>-->
     </head>
     
     <body>
@@ -47,18 +47,22 @@
 
             <p style="margin-bottom: 0px;"><b>Scenes:</b></p>
 
-            <div class="buttoncontainer">
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--1-col" style="padding-right: 30px;">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect" id="btn_scene1" sceneId="d93b9e600-on-0">
                     <i class="material-icons" style="color: #fb8c00;">wb_incandescent</i>
                 </button>
-
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                </div>
+                <div class="mdl-cell mdl-cell--1-col" style="padding-right: 30px;">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect" id="btn_scene2" sceneId="5f1fd173c-on-0">
                     <i class="material-icons" style="color: #e53935;">wb_incandescent</i>
                 </button>
-
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                </div>
+                <div class="mdl-cell mdl-cell--1-col" style="padding-right: 30px;">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect" id="btn_scene3" sceneId="747ac8503-on-0">
                     <i class="material-icons" style="color: #039be5;">wb_incandescent</i>
                 </button>
+                </div>
             </div>
 
             <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:81%; margin-top:5px; margin-bottom:-2px;" href="javascript:gui.App.closeAllWindows();" class="button tiny alert">Quit</a>
@@ -67,4 +71,5 @@
     </body>
 
     <script src="js/huehuehue.js"></script>
+
 </html>

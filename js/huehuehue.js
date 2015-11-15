@@ -7,9 +7,9 @@ var checkbox1 = document.getElementById("switch-1");
 var checkbox2 = document.getElementById("switch-2");
 var checkbox3 = document.getElementById("switch-3");
 var brightnessSlider = document.getElementById("brightnessSlider");
-
-//empty list for scenes
-var scenes = [];
+var sceneButton1 = document.getElementById("btn_scene1");
+var sceneButton2 = document.getElementById("btn_scene2");
+var sceneButton3 = document.getElementById("btn_scene3");
 
 //create tray icon
 var tray = new gui.Tray({
@@ -56,6 +56,27 @@ brightnessSlider.addEventListener("change", function(){
 	huecontrol.setBrightness(brightnessSlider.value);
 });
 
+sceneButton1.addEventListener("click", function(evt){
+	var sceneId = evt.srcElement.parentElement.getAttribute("sceneid");
+	huecontrol.activateScene(sceneId, function(){
+		updateInterface();
+	});
+});
+sceneButton2.addEventListener("click", function(evt){
+	var sceneId = evt.srcElement.parentElement.getAttribute("sceneid");
+	huecontrol.activateScene(sceneId, function(){
+		updateInterface();
+	});
+
+});
+sceneButton3.addEventListener("click", function(evt){
+	var sceneId = evt.srcElement.parentElement.getAttribute("sceneid");
+	huecontrol.activateScene(sceneId, function(){
+		updateInterface();
+	});
+
+});
+
 
 
 // called when user click on tray icon
@@ -80,21 +101,32 @@ function translate(pos) {
 
 function updateInterface() {
 	huecontrol.getLightStatus(1, function(data){
-		checkbox1.checked = data.state.on;
+		if(data.state.on) {
+			checkbox1.parentElement.MaterialSwitch.on();
+		} else {
+			checkbox1.parentElement.MaterialSwitch.off();
+		}
+		// checkbox1.checked = data.state.on;
 		var brightnessPercent = (data.state.bri / 255) * 100;
 		brightnessSlider.MaterialSlider.change(brightnessPercent)
 	});
 
 	huecontrol.getLightStatus(2, function(data){
-		checkbox2.checked = data.state.on;
+		if(data.state.on) {
+			checkbox2.parentElement.MaterialSwitch.on();
+		} else {
+			checkbox2.parentElement.MaterialSwitch.off();
+		}
+		// checkbox2.checked = data.state.on;
 	});
 
 	huecontrol.getLightStatus(3, function(data){
-		checkbox3.checked = data.state.on;
-	});
-
-	huecontrol.getScenes(function(data){
-		scenes = data;
+		if(data.state.on) {
+			checkbox3.parentElement.MaterialSwitch.on();
+		} else {
+			checkbox3.parentElement.MaterialSwitch.off();
+		}
+		// checkbox3.checked = data.state.on;
 	});
 }
 

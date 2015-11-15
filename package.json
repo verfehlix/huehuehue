@@ -10,7 +10,7 @@
     "transparent": true,
     "frame": false,
     "resizable": false,
-    "toolbar": false,
+    "toolbar": true,
     "width": 200,
     "height": 400
   },
