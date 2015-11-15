@@ -58,26 +58,23 @@ brightnessSlider.addEventListener("change", function(){
 
 sceneButton1.addEventListener("click", function(evt){
 	var sceneId = evt.srcElement.parentElement.getAttribute("sceneid");
-	huecontrol.activateScene(sceneId, function(){
+	huecontrol.activateScene(sceneId, function(result){
 		updateInterface();
 	});
 });
 sceneButton2.addEventListener("click", function(evt){
 	var sceneId = evt.srcElement.parentElement.getAttribute("sceneid");
-	huecontrol.activateScene(sceneId, function(){
+	huecontrol.activateScene(sceneId, function(result){
 		updateInterface();
 	});
 
 });
 sceneButton3.addEventListener("click", function(evt){
 	var sceneId = evt.srcElement.parentElement.getAttribute("sceneid");
-	huecontrol.activateScene(sceneId, function(){
+	huecontrol.activateScene(sceneId, function(result){
 		updateInterface();
 	});
-
 });
-
-
 
 // called when user click on tray icon
 function toggleTrayMenuAt(position) {
@@ -106,7 +103,6 @@ function updateInterface() {
 		} else {
 			checkbox1.parentElement.MaterialSwitch.off();
 		}
-		// checkbox1.checked = data.state.on;
 		var brightnessPercent = (data.state.bri / 255) * 100;
 		brightnessSlider.MaterialSlider.change(brightnessPercent)
 	});
@@ -117,7 +113,6 @@ function updateInterface() {
 		} else {
 			checkbox2.parentElement.MaterialSwitch.off();
 		}
-		// checkbox2.checked = data.state.on;
 	});
 
 	huecontrol.getLightStatus(3, function(data){
@@ -126,10 +121,7 @@ function updateInterface() {
 		} else {
 			checkbox3.parentElement.MaterialSwitch.off();
 		}
-		// checkbox3.checked = data.state.on;
 	});
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    updateInterface();
-}, false);
+updateInterface();

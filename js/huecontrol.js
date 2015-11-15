@@ -28,7 +28,6 @@ module.exports = {
 	getLightStatus: function(lightNumber, callback) {
 		api.lightStatus(lightNumber, function(err, result) {
 			if (err) huecontrol.displayError(err);
-			
 			callback(result);
 		});
 	},
@@ -69,18 +68,19 @@ module.exports = {
 		var huecontrol = this;
 		api.getScenes(function(err, result) {
 			if (err) huecontrol.displayError(err);
-			
 			callback(result);
 		});
 	},
 
 	activateScene: function(sceneId, callback) {
 		var huecontrol = this;
-		api.activateScene(sceneId, function(err, result) {
-		if (err) huecontrol.displayError(err);
-		
-		huecontrol.display(result);
-		callback();
-		});
+		// api.activateScene(sceneId, function(err, result) {
+		// if (err) huecontrol.displayError(err);
+		// huecontrol.display(result);
+		// callback();
+		// });
+		api.activateScene(sceneId)
+			.then(callback)
+			.done();
 	}
 }
